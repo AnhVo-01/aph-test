@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+.ant-layout-header {
+  padding: 0 26px;
+  background-color: #445185;
+}
+
+.logo-vertical {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 6px;
+    width: 100%;
+    background-color: #ffffff;
+  }
+}
+
+.ant-layout-sider {
+  overflow: auto;
+  height: 100vh;
+  position: fixed !important;
+  inset-inline-start: 0;
+  top: 0;
+  bottom: 0;
+
+  &::-webkit-scrollbar {
+    width: 7px !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #455a64;
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+}
+
+@media print {
+  body {
+    margin: 0 !important;
+  }
+}
+
+.main-container {
+  --ckeditor5-preview-sidebar-width: 270px;
+  --ckeditor5-preview-height: 700px;
+  font-family: "Lato";
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ck-content {
+  font-family: "Lato";
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.editor-container__editor-wrapper {
+  display: flex;
+  width: fit-content;
+}
+
+.editor-container_document-editor {
+  border: 1px solid var(--ck-color-base-border);
+}
+
+.editor-container_document-editor .editor-container__toolbar {
+  display: flex;
+  position: relative;
+  box-shadow: 0 2px 3px hsla(0, 0%, 0%, 0.078);
+}
+
+.editor-container_document-editor .editor-container__toolbar > .ck.ck-toolbar {
+  flex-grow: 1;
+  width: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.editor-container_document-editor
+  .editor-container__menu-bar
+  > .ck.ck-menu-bar {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.editor-container_document-editor .editor-container__editor-wrapper {
+  max-height: var(--ckeditor5-preview-height);
+  min-height: var(--ckeditor5-preview-height);
+  overflow-y: scroll;
+  background: var(--ck-color-base-foreground);
+}
+
+.editor-container_document-editor .editor-container__editor {
+  margin-top: 28px;
+  margin-bottom: 28px;
+  height: 100%;
+}
+
+.editor-container_document-editor
+  .editor-container__editor
+  .ck.ck-editor__editable {
+  box-sizing: border-box;
+  min-width: calc(210mm + 2px);
+  max-width: calc(210mm + 2px);
+  min-height: 297mm;
+  height: fit-content;
+  padding: 20mm 12mm;
+  border: 1px hsl(0, 0%, 82.7%) solid;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 3px hsla(0, 0%, 0%, 0.078);
+  flex: 1 1 auto;
+  margin-left: 72px;
+  margin-right: 72px;
+}
+
+.editor-container__sidebar {
+  min-width: var(--ckeditor5-preview-sidebar-width);
+  max-width: var(--ckeditor5-preview-sidebar-width);
+  margin-top: 28px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.editor-container__minimap-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.editor-container__sidebar_minimap {
+  margin: 0;
+  flex: 0 0 auto;
+  border-left: 1px solid var(--ck-color-toolbar-border);
+  position: relative;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.editor-container_include-minimap.ck-minimap__iframe-content {
+  background: hsl(0, 0%, 100%);
+}
+
+.editor-container_include-minimap.ck-minimap__iframe-content
+  .ck.ck-editor__editable {
+  font-family: "Lato";
+  line-height: 1.6;
+  flex: 1 1 auto;
+  word-break: break-word;
+  box-sizing: border-box;
+  min-width: calc(210mm + 2px);
+  max-width: calc(210mm + 2px);
+  min-height: 297mm;
+  height: fit-content;
+  padding: 20mm 12mm;
+}
+
+.editor-container_include-minimap .editor-container__editor-wrapper {
+  height: 100%;
+}
+
+.editor-container_include-minimap .editor-container__sidebar_minimap {
+  max-width: calc(var(--ckeditor5-preview-sidebar-width) / 2);
+  min-width: calc(var(--ckeditor5-preview-sidebar-width) / 2);
+}
+
+.ck-content h3.category {
+  font-family: "Oswald";
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+  letter-spacing: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.ck-content h2.document-title {
+  font-family: "Oswald";
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ck-content h3.document-subtitle {
+  font-family: "Oswald";
+  font-size: 20px;
+  color: #555;
+  margin: 0 0 1em;
+  font-weight: bold;
+  padding: 0;
+}
+
+.ck-content p.info-box {
+  --background-size: 30px;
+  --background-color: #e91e63;
+  padding: 1.2em 2em;
+  border: 1px solid var(--background-color);
+  background: linear-gradient(
+      135deg,
+      var(--background-color) 0%,
+      var(--background-color) var(--background-size),
+      transparent var(--background-size)
+    ),
+    linear-gradient(
+      135deg,
+      transparent calc(100% - var(--background-size)),
+      var(--background-color) calc(100% - var(--background-size)),
+      var(--background-color)
+    );
+  border-radius: 10px;
+  margin: 1.5em 2em;
+  box-shadow: 5px 5px 0 #ffe6ef;
+}
+
+.ck-content span.marker {
+  background: yellow;
+}
+
+.ck-content span.spoiler {
+  background: #000;
+  color: #000;
+}
+
+.ck-content span.spoiler:hover {
+  background: #000;
+  color: #fff;
+}
+
+.ck-content .button {
+  display: inline-block;
+  width: 260px;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ck-content .button--green {
+  background-color: #406b1e;
+}
+
+.ck-content .button--black {
+  background-color: #141517;
+}
+
+.editor_container__word-count .ck-word-count {
+  color: var(--ck-color-text);
+  display: flex;
+  height: 20px;
+  gap: var(--ck-spacing-small);
+  justify-content: flex-end;
+  font-size: var(--ck-font-size-base);
+  line-height: var(--ck-line-height-base);
+  font-family: var(--ck-font-face);
+  padding: var(--ck-spacing-small) var(--ck-spacing-standard);
+}
+
+.editor-container_include-word-count.editor-container_document-editor
+  .editor_container__word-count {
+  border-top: 1px solid var(--ck-color-base-border);
+}
