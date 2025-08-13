@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import route from "./route";
 
-export default configureStore({
+export const store = configureStore({
   reducer: { route },
 });
