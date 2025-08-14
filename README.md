@@ -54,7 +54,7 @@ $ npm run dev
 ### Thiết kế Figma:
 
 - [Dev mode](https://www.figma.com/design/IySGuTvZnBSJT5FA5RLceI/Product-Introduction?node-id=0-1&m=dev&t=EQ48VlCkYx6SsaFc-1)
-- [Prototype](https://www.figma.com/proto/IySGuTvZnBSJT5FA5RLceI/Product-Introduction?node-id=1-4&p=f&t=aDYAKcnJa9Obj4fA-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A4)
+- [Prototype](https://www.figma.com/proto/zoSD9PIncj3vjaO65YOEwQ?node-id=3-3&t=J9ywAOBbzt3iNi5z-6)
 
 ### Yêu cầu chức năng:
 
