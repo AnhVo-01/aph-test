@@ -2,7 +2,7 @@
 
 <img height="100" src="https://anphatholdings.vn/wp-content/uploads/2019/12/Logo-An-Phat.png">
 
-<h1>Bài kiểm tra front-end React</h1>
+<h1>Bài kiểm tra React</h1>
 </div>
 
 ## 🖥 Môi trường
