@@ -1,11 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
-  font-family: 'Lexend', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: normal;
   margin: 0;
   padding: 0;
@@ -17,15 +11,16 @@
 
 ol,
 ul {
-  margin-top: 0;
-  padding: 0;
-}
-
-ul {
   list-style: none;
+  padding: 0;
+  margin: 0 !important;
 }
 
 a {
   color: inherit;
   background-color: transparent;
+}
+
+.no-click {
+  pointer-events: none;
 }

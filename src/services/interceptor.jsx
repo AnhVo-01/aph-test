@@ -1,3 +1,4 @@
+import { notification } from "antd";
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -24,16 +25,67 @@ axiosClient.interceptors.request.use(
 
 axiosClient.interceptors.response.use(
   (response) => {
-    return response.data;
+    if (response?.data?.result?.messageSuccess) {
+      notification.success({
+        message: "Thành công",
+        description: response?.data?.result?.messageSuccess,
+        placement: "bottomRight",
+      });
+    }
+    return response.data.result;
   },
   (error) => {
-    if (error?.response?.status === 440) {
-      Cookies.remove("gnc.auth-token");
-      window.location.href =
-        import.meta.env.VITE_SSO_URL +
-        "/auth/login?callback=" +
-        window.location.href;
+    if (
+      typeof error.response !== "undefined" &&
+      typeof error.response.config !== "undefined" &&
+      typeof error.response.config.url !== "undefined"
+    ) {
+      var arrPath = error.response.config.url.split("/");
+      if (arrPath.length > 0 && arrPath[arrPath.length - 1] === "checkToken") {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.href =
+          window.abp.appWebUrl + "?urlReturn=" + window.abp.appBaseUrl;
+      }
     }
+
+    if (
+      !!error.response &&
+      !!error.response.data.error &&
+      !!error.response.data.error.message &&
+      error.response.data.error.details
+    ) {
+      notification.error({
+        message: error.response.data.error.message,
+        description: error.response.data.error.details,
+        placement: "bottomRight",
+      });
+    } else if (
+      !!error.response &&
+      !!error.response.data.error &&
+      !!error.response.data.error.message
+    ) {
+      notification.error({
+        message: "Lỗi",
+        description: error.response.data.error.message,
+        placement: "bottomRight",
+      });
+    } else if (!error.response) {
+      notification.error({
+        message: "Lỗi",
+        description: "Lỗi kết nối",
+        placement: "bottomRight",
+      });
+    }
+
+    if (!!error.response && error.response.status === 401) {
+      notification.error({
+        message: "Lỗi",
+        description: error.response.data.message,
+        placement: "bottomRight",
+      });
+    }
+
     if (error && error.response && error.response.data) {
       throw error.response.data;
     }
@@ -42,11 +94,11 @@ axiosClient.interceptors.response.use(
 );
 
 function getToken() {
-  const itemStr = Cookies.get("gnc.auth-token");
+  const itemStr = Cookies.get("Abp.AuthToken");
   if (!itemStr) {
     return null;
   } else {
-    return "Bearer " + itemStr;
+    return itemStr;
   }
 }
 

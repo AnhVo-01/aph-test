@@ -1,71 +1,51 @@
 import axios from "axios";
 import axiosClient from "./interceptor";
 import Cookies from "js-cookie";
+import { store } from "../redux/store";
+import { setCurrentUser } from "../redux/user";
 
 export const authService = {
-  login: async (form) => {
+  async login(form) {
     const res = await axios.post(
-      import.meta.env.VITE_BASE_URL + "/auth/login",
+      window.abp.appServiceUrl + "/auth/checkLogin",
       form
     );
-    if (res.status === 200) {
-      setAuthFromCookie(res.data);
-      authRedirect();
-    }
-  },
 
-  getUserById(id) {
-    return axiosClient.get(`/api/users/${id}`);
+    if (res.status === 200) {
+      setAuthFromCookie(res.data.result);
+    }
   },
 
   getUserByToken() {
-    const auth = Cookies.get("gnc.auth-token");
+    const auth = Cookies.get("Abp.AuthToken");
 
     if (!auth) {
-      window.location.href =
-        import.meta.env.VITE_SSO_URL +
-        "/auth/login?callback=" +
-        window.location.href;
+      return undefined;
     }
 
-    return axiosClient.get("/auth/getMe", {
-      params: { token: auth, app: "BCMS" },
-    });
-  },
-
-  registration(user) {
-    return axiosClient.post("/auth/register", user);
+    return axiosClient
+      .post("/auth/checkToken", { token: auth })
+      .then((response) => {
+        store.dispatch(setCurrentUser(response));
+      })
+      .catch((error) => console.error(error));
   },
 
   logout() {
-    Cookies.remove("gnc.auth-token");
-    window.location.href = import.meta.env.VITE_SSO_URL;
+    Cookies.remove("Abp.AuthToken");
+    authRedirect(true);
   },
 };
 
 function setAuthFromCookie(auth) {
-  // store auth authToken/refreshToken/epiresIn in local storage to keep user logged in between page refreshes
   if (auth && auth.accessToken) {
-    Cookies.set("gnc.auth-token", auth.accessToken, 1);
-    return true;
+    Cookies.set("Abp.AuthToken", auth.accessToken, 7);
+    authRedirect();
+  } else {
+    window.location.href = "/auth/login";
   }
-  return false;
 }
 
-function authRedirect() {
-  if (window.location.href.includes("callback")) {
-    const params = new URLSearchParams(window.location.href.split("?")[1]);
-
-    // window.location.href = window.location.href.split("/?")[0];
-
-    const auth = Cookies.get("gnc.auth-token");
-
-    if (auth) {
-      window.location.href = params.get("callback") + "?code=" + auth;
-    } else {
-      window.location.href = "/auth/login";
-    }
-  } else {
-    window.location.href = "/";
-  }
+function authRedirect(logout = false) {
+  window.location.href = logout ? "/auth/login" : "/";
 }

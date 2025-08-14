@@ -5,15 +5,15 @@
 <h1>Bài kiểm tra front-end React</h1>
 </div>
 
-
 ## 🖥 Môi trường
+
 - React 18
 - NodeJS: >= 18.20.8 (Khuyến nghị sử dụng phiên bản bản LTS >= 20.19.4)
 - Visual Studio Code (Hoặc các code editor khác)
 - Git
 
-
 ## 📦 Cài đặt
+
 1. Clone repo về máy
 2. Tạo nhánh riêng từ main
 3. Tiến hành thực hiện theo yêu cầu
@@ -45,34 +45,108 @@ $ npm install
 $ npm run dev
 ```
 
-
 ## ⌨️ Thực hành
+
 ### Tên đề: 📦 Product Introduction – Giới thiệu sản phẩm
 
 > "Bạn được phép dùng bất kỳ AI code assistant nào (ChatGPT, Copilot, v.v.). Hãy ghi rõ đoạn code nào được AI gợi ý."
 
-### Thiết kế Figma: 
+### Thiết kế Figma:
+
 - [Dev mode](https://www.figma.com/design/IySGuTvZnBSJT5FA5RLceI/Product-Introduction?node-id=0-1&m=dev&t=EQ48VlCkYx6SsaFc-1)
 - [Prototype](https://www.figma.com/proto/IySGuTvZnBSJT5FA5RLceI/Product-Introduction?node-id=1-4&p=f&t=aDYAKcnJa9Obj4fA-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A4)
 
 ### Yêu cầu chức năng:
+
 #### 1. Trang danh mục sản phẩm:
-* Lấy dữ liệu từ API: `GET /products/:id` → trả về chi tiết sản phẩm.
-   
+
+- Lấy dữ liệu từ API: `GET /category/GetListCategory, params: {lang=en}` → trả về danh sách danh mục sản phẩm:
+
+```
+{
+    id: number,
+    thumb: string,
+    categoryName: string,
+    link: string,
+    shortDesc: string,
+    description: string,
+    parentId: number,
+    children: []
+}
+```
+
 #### 2. Trang danh sách sản phẩm theo danh mục:
-* Khi click vào một danh mục → điều hướng sang `/category/:url`
-* Lấy dữ liệu từ API: `GET /products` → trả về danh sách sản phẩm: id, name, price, category, stock, thumbnail.
+
+- Khi click vào một danh mục → điều hướng sang `/category/:url`
+- Lấy dữ liệu từ API: `GET /product/GetProductByCategory, params: {lang=en, page=:pageNum, ids=[/* Danh sách categoryId */]}`, → trả về danh sách sản phẩm theo trang:
+
+```
+{
+    items: [
+        {
+            id: number,
+            thumb: string,
+            prodName: string,
+            slug: string,
+            sku: string
+        }
+    ],
+    totalCount: number
+}
+```
 
 #### 3. Trang chi tiết sản phẩm:
-* Khi click vào một sản phẩm → điều hướng sang `/products/:url`
-* Lấy dữ liệu từ API: `GET /products/:id` → trả về chi tiết sản phẩm.
 
->🔸 **Lưu ý**:
+- Khi click vào một sản phẩm → điều hướng sang `/product/:url`
+- Lấy dữ liệu từ API: `GET product/GetProductByUrl, params: {lang=en, url=:slug}` → trả về chi tiết sản phẩm:
+
+```
+{
+    id: number,
+    thumb: string,
+    prodName: string,
+    shortDesc: string,
+    description: string,
+    specification: string
+    sku: string,
+    dataSheet: string,
+    media: [] // Danh sách ảnh sản phẩm,
+}
+```
+
+### Các API khác:
+
+- Lấy dữ liệu từ API: `GET /product/GetRelatedProducts, params: {lang=en, id=:productId}` → trả về danh sách các sản phẩm liên quan (sử dụng tại trang chi tiết sản phẩm):
+
+```
+{
+    id: number,
+    thumb: string,
+    prodName: string,
+    slug: string,
+    sku: string,
+}
+```
+
+- Khi thực hiện tìm kiếm → điều hướng sang `/search?query=:keyword`
+- Lấy dữ liệu từ API: `GET /product/SearchProducts, params: {lang=en, query=:keyword}` → trả về danh sách sản phẩm:
+
+```
+{
+    products: [],
+    categories: [], // Dùng cho filters
+    filters: [],    // Dùng cho filters
+}
+```
+
+- Lấy dữ liệu từ API: `POST /product/FilterSearchProduct, body: {lang=en, textSearch=:keyword, categories=[/*Danh sách categoryId*/], page=:pageNum}` → trả về danh sách sản phẩm đã lọc.
+
+> 🔸 **Lưu ý**:
+>
 > - Bạn cần tự fake data khi thực hiện, URL API và dữ liệu thật sẽ được cung cấp tại buổi phỏng vấn. Sau đó bạn có `15 - 30 phút` để tiến hành ghép nối và chỉnh sửa.
 > - Vui lòng không xóa tất cả các đoạn mã code đã có. Trong trường hợp code có sẵn gây lỗi hoặc ảnh hưởng đến code của bạn, vui lòng comment và ghi rõ lý do.
 > - Bạn có thể sử dụng thư viện AntDesign đã được cài sẵn hoặc thêm style custom vào `src/styles/_product.scss`
-> - Chúng tôi đã cài sẵn thư viện icon bạn có thể sử dụng [Ant Design Icon](https://ant.design/components/icon) hoặc [FontAweSome 7 Free](https://fontawesome.com/icons)
-
+> - Chúng tôi đã cài sẵn thư viện icon để bạn có thể sử dụng [Ant Design Icon](https://ant.design/components/icon) và [FontAweSome 7 Free](https://fontawesome.com/icons), hoặc bạn có thể sử dụng SVG nếu muốn.
 
 ## 🔗 Đường dẫn
 
