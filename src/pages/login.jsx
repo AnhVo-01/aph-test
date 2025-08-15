@@ -9,6 +9,7 @@ import {
   QRCode,
   Row,
   Typography,
+  Modal, // ✅ added
 } from "antd";
 import LogoLong from "../assets/images/logo_an_phat.png";
 import LogoAPH from "../assets/icons/logoAP.svg";
@@ -17,31 +18,49 @@ import { useState } from "react";
 
 function Login() {
   const [form] = Form.useForm();
-
   const [loading, setLoading] = useState(false);
 
   const onLogin = () => {
-    form
-      .validateFields()
-      .then(async (values) => {
-        setLoading(true);
+  form
+    .validateFields()
+    .then(async (values) => {
+      setLoading(true);
+      try {
+        const res = await authService.login(values); // ✅ single call
+        setLoading(false);
+        console.log("📥 API Response:", JSON.stringify(res, null, 2));
 
-        try {
-          await authService.login(values);
-          setLoading(false);
-        } catch (error) {
-          console.error(error);
-          setLoading(false);
+        if (res?.status) {
+          const modal = Modal.success({
+            title: "Đăng nhập thành công 🎉",
+            content: (
+              <div>
+                <p><b>Tên:</b> {res.result.user.name}</p>
+                <p><b>Email:</b> {res.result.user.email}</p>
+              </div>
+            ),
+            okText: "OK",
+          });
+
+          // ⏳ Auto close after 5 seconds
+          setTimeout(() => {
+            modal.destroy();
+          }, 5000);
         }
-      })
-      .catch((errorInfo) => {
-        form.scrollToField(errorInfo.errorFields[0].name, {
-          behavior: "smooth",
-          focus: true,
-        });
-        console.error("Form validation failed:", errorInfo);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+      }
+    })
+    .catch((errorInfo) => {
+      form.scrollToField(errorInfo.errorFields[0].name, {
+        behavior: "smooth",
+        focus: true,
       });
-  };
+      console.error("Form validation failed:", errorInfo);
+    });
+};
+
 
   return (
     <div id="login-page">
@@ -70,14 +89,14 @@ function Login() {
             <Form.Item
               label="Tên đăng nhập"
               name="tenDN"
-              rules={[{ required: true }]}
+              rules={[{ required: true, message: "Vui lòng nhập tên đăng nhập" }]}
             >
               <Input />
             </Form.Item>
             <Form.Item
               label="Mật khẩu"
               name="matKhau"
-              rules={[{ required: true }]}
+              rules={[{ required: true, message: "Vui lòng nhập mật khẩu" }]}
             >
               <Input.Password />
             </Form.Item>

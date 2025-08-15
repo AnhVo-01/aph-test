@@ -3,7 +3,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const axiosClient = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL,
+  baseURL: import.meta.env.VITE_BASE_URL + "/api/services/app",
   timeout: 1800000,
 });
 
@@ -32,7 +32,7 @@ axiosClient.interceptors.response.use(
         placement: "bottomRight",
       });
     }
-    return response.data.result;
+    return response.data?.result ?? response.data;
   },
   (error) => {
     if (

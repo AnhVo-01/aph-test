@@ -1,3 +1,4 @@
+@use "sass:meta";
 #login-page {
   background-image: url(./assets/images/auth-bg.jpg);
   background-size: cover;
@@ -140,9 +141,9 @@
     }
   }
 
-  @import "./styles/_header";
-  @import "./styles/_footer";
-  @import "./styles/_product";
+  @include meta.load-css("styles/_header");
+  @include meta.load-css("styles/_footer");
+  @include meta.load-css("styles/_product");
 }
 
 @media only screen and (max-width: 800px) {

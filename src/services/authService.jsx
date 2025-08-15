@@ -1,4 +1,3 @@
-import axios from "axios";
 import axiosClient from "./interceptor";
 import Cookies from "js-cookie";
 import { store } from "../redux/store";
@@ -6,22 +5,26 @@ import { setCurrentUser } from "../redux/user";
 
 export const authService = {
   async login(form) {
-    const res = await axios.post(
-      window.abp.appServiceUrl + "/auth/checkLogin",
-      form
-    );
-
-    if (res.status === 200) {
-      setAuthFromCookie(res.data.result);
+    try {
+      const res = await axiosClient.post("/auth/checkLogin", form);
+      setAuthFromCookie(res);
+      return res; // ✅ return so caller can use it
+    } catch (err) {
+      console.warn("checkLogin failed, switching to /auth/Login...", err);
+      try {
+        const resLogin = await axiosClient.post("/auth/Login", form);
+        setAuthFromCookie(resLogin);
+        return resLogin; // ✅ return so caller can use it
+      } catch (loginErr) {
+        console.error("Both checkLogin and Login failed", loginErr);
+        throw loginErr;
+      }
     }
   },
 
   getUserByToken() {
     const auth = Cookies.get("Abp.AuthToken");
-
-    if (!auth) {
-      return undefined;
-    }
+    if (!auth) return undefined;
 
     return axiosClient
       .post("/auth/checkToken", { token: auth })
@@ -38,8 +41,9 @@ export const authService = {
 };
 
 function setAuthFromCookie(auth) {
-  if (auth && auth.accessToken) {
-    Cookies.set("Abp.AuthToken", auth.accessToken, 7);
+  const token = auth?.result?.accessToken;
+  if (token) {
+    Cookies.set("Abp.AuthToken", token, { expires: 7 });
     authRedirect();
   } else {
     window.location.href = "/auth/login";
