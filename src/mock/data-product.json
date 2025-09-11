@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Food Wrap",
+    "sku": "036897488221-2",
+    "image": "/images/website/product-list_1.png",
+    "categoryId": 1,
+    "categoryName": "Consumer Packaging",
+    "type": "Food Storage",
+    "width": 30,
+    "length": 50,
+    "recycle": "Yes"
+  },
+  {
+    "id": 2,
+    "name": "Overlock Jumbo bag",
+    "sku": "036897488221-2",
+    "image": "/images/website/product-list_2.png",
+    "categoryId": 2,
+    "categoryName": "Industrial Packaging",
+    "type": "Trash Bags",
+    "width": 40,
+    "length": 100,
+    "recycle": "No"
+  },
+  {
+    "id": 3,
+    "name": "Food Wrap",
+    "sku": "036897488221-2",
+    "image": "/images/website/product-list_1.png",
+    "categoryId": 1,
+    "categoryName": "Consumer Packaging",
+    "type": "Containers",
+    "width": 25,
+    "length": 60,
+    "recycle": "Yes"
+  },
+  {
+    "id": 4,
+    "name": "Overlock Jumbo bag",
+    "sku": "036897488221-2",
+    "image": "/images/website/product-list_2.png",
+    "categoryId": 2,
+    "categoryName": "Industrial Packaging",
+    "type": "Knife – Case – Storage Box",
+    "width": 50,
+    "length": 80,
+    "recycle": "No"
+  },
+  {
+    "id": 5,
+    "name": "Overlock Jumbo bag",
+    "sku": "036897488221-2",
+    "image": "/images/website/product-list_2.png",
+    "categoryId": 2,
+    "categoryName": "Industrial Packaging",
+    "type": "Gloves",
+    "width": 20,
+    "length": 30,
+    "recycle": "Yes"
+  },
+  {
+    "id": 6,
+    "name": "Food Wrap",
+    "sku": "036897488221-2",
+    "image": "/images/website/product-list_1.png",
+    "categoryId": 1,
+    "categoryName": "Consumer Packaging",
+    "type": "Food Storage",
+    "width": 35,
+    "length": 40,
+    "recycle": "No"
+  },
+  {
+    "id": 7,
+    "name": "Overlock Jumbo bag",
+    "sku": "036897488221-2",
+    "image": "/images/website/product-list_2.png",
+    "categoryId": 2,
+    "categoryName": "Industrial Packaging",
+    "type": "Trash Bags",
+    "width": 60,
+    "length": 120,
+    "recycle": "Yes"
+  },
+  {
+    "id": 8,
+    "name": "Food Wrap",
+    "sku": "036897488221-2",
+    "image": "/images/website/product-list_1.png",
+    "categoryId": 1,
+    "categoryName": "Consumer Packaging",
+    "type": "Containers",
+    "width": 15,
+    "length": 25,
+    "recycle": "No"
+  },
+  {
+    "id": 9,
+    "name": "Overlock Jumbo bag",
+    "sku": "036897488221-2",
+    "image": "/images/website/product-list_2.png",
+    "categoryId": 2,
+    "categoryName": "Industrial Packaging",
+    "type": "Gloves",
+    "width": 55,
+    "length": 90,
+    "recycle": "Yes"
+  }
+]

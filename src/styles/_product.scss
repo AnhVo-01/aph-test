@@ -265,7 +265,9 @@
   ._0odn {
     max-width: 1320px;
     margin: 0 auto;
-
+    ._3iwp {
+      margin-bottom: 30px;
+    }
     ._3iwp ._8ahh {
       position: relative;
 
@@ -373,6 +375,31 @@
     margin: 0 auto;
   }
 }
+._2jjl {
+  display: flex;
+  justify-content: center;
+  border-radius: 22px;
+  overflow: hidden;
+  ._0cac {
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    ._9not {
+      ._2pzh {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1e246e;
+      }
+      ._8ynm {
+        font-size: 14px;
+        font-weight: 500;
+        color: #696969;
+      }
+    }
+  }
+}
 
 .zeros-vug {
   background: #f6f7ef;
@@ -382,8 +409,82 @@
     margin: 0 auto;
   }
 }
+._4euo {
+  ._8aey {
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    overflow: hidden;
+    ._1qlp {
+      width: 100%;
+      height: auto;
+    }
+  }
+  ._3pxh {
+    padding: 15px;
+    background-color: #fff;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+
+    ._0cvj {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1e246e;
+      margin-bottom: 5px;
+    }
+    ._8gbl {
+      font-size: 14px;
+      font-weight: 500;
+      color: #696969;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      line-height: 20px;
+      max-height: 40px;
+      margin-bottom: 12px;
+    }
+    ._4jqn {
+      width: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      border: 1px solid #118e55;
+      color: #118e55;
+      border-radius: 50px;
+      &.has-hover:hover {
+        ._4jqn {
+          color: #fff;
+          transition: filter 0.6s, opacity 0.6s, transform 0.6s, box-shadow 0.3s;
+          background: var(
+            --Linear-1,
+            linear-gradient(90deg, #008356 0%, #52a949 100%)
+          );
+        }
+      }
+    }
+  }
+}
 
 // CATEGORY
+.box-product {
+  .customer-box-image-product {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .product-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e246e;
+    margin: 10px 0;
+  }
+  .sku {
+    font-size: 14px;
+    font-weight: 400;
+    color: #696969;
+    margin-bottom: 10px;
+  }
+}
 .lichen-gel {
   padding-top: 80px;
   padding-bottom: 50px;
@@ -405,7 +506,7 @@
     .button-outline-green {
       background: #fff;
       color: #118e55;
-      border: 1px solid #118e55;
+      border: 1px solid #118e55 !important;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -428,6 +529,37 @@
           linear-gradient(90deg, #008356 0%, #52a949 100%)
         );
       }
+    }
+  }
+}
+._3qdw {
+  margin-bottom: 8px;
+
+  .button-outline-green {
+    background: #fff;
+    color: #118e55;
+    border: 1px solid #118e55 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    border-radius: 100px;
+    width: -moz-max-content;
+    width: max-content;
+    height: 50px;
+    font-weight: bolder;
+    letter-spacing: 0.03em;
+    line-height: 2.4em;
+    padding: 0 1.2em;
+    text-transform: uppercase;
+
+    &:hover {
+      color: #fff;
+      background: var(
+        --Linear-1,
+        linear-gradient(90deg, #008356 0%, #52a949 100%)
+      );
     }
   }
 }
@@ -647,6 +779,11 @@
   ._1ghu {
     max-width: 1320px;
     margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    ._6tdv {
+      width: 50%;
+    }
   }
 
   .GalleryArea {
@@ -778,7 +915,20 @@
       flex-wrap: wrap;
       gap: 12px;
       margin-bottom: 32px;
-
+      .button-gradient {
+        background: linear-gradient(90deg, #3d9e56 0%, #80c45a 100%);
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 500;
+        border-radius: 40px;
+      }
+      .button-outline-green {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 500;
+        border-radius: 40px;
+      }
       .button {
         padding: 12px 28px;
 

@@ -145,84 +145,86 @@ function AllProduct() {
             </Row>
           </div>
           <div className="_0odn">
-            <div span={8} className="_3iwp">
-              <a href="#" className="_8ahh block has-hover">
-                <div className="_4rfh image-zoom">
-                  <img src="/images/website/market_1.png" className="_5mgw" />
-                </div>
-                <div className="_1blc">
-                  <div className="_9wvo">Consumer Goods</div>
-                  <div className="_4jqn">
-                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+            <Row gutter={30}>
+              <Col span={8} className="_3iwp">
+                <a href="#" className="_8ahh block has-hover">
+                  <div className="_4rfh image-zoom">
+                    <img src="/images/website/market_1.png" className="_5mgw" />
                   </div>
-                </div>
-              </a>
-            </div>
-            <div span={8} className="_3iwp">
-              <a href="#" className="_8ahh block has-hover">
-                <div className="_4rfh image-zoom">
-                  <img src="/images/website/market_2.png" className="_5mgw" />
-                </div>
-                <div className="_1blc">
-                  <div className="_9wvo">Consumer Goods</div>
-                  <div className="_4jqn">
-                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  <div className="_1blc">
+                    <div className="_9wvo">Consumer Goods</div>
+                    <div className="_4jqn">
+                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
-            <div span={8} className="_3iwp">
-              <a href="#" className="_8ahh block has-hover">
-                <div className="_4rfh image-zoom">
-                  <img src="/images/website/market_3.png" className="_5mgw" />
-                </div>
-                <div className="_1blc">
-                  <div className="_9wvo">Packaging</div>
-                  <div className="_4jqn">
-                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                </a>
+              </Col>
+              <Col span={8} className="_3iwp">
+                <a href="#" className="_8ahh block has-hover">
+                  <div className="_4rfh image-zoom">
+                    <img src="/images/website/market_2.png" className="_5mgw" />
                   </div>
-                </div>
-              </a>
-            </div>
-            <div span={8} className="_3iwp">
-              <a href="#" className="_8ahh block has-hover">
-                <div className="_4rfh image-zoom">
-                  <img src="/images/website/market_4.png" className="_5mgw" />
-                </div>
-                <div className="_1blc">
-                  <div className="_9wvo">Engineering Plastics</div>
-                  <div className="_4jqn">
-                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  <div className="_1blc">
+                    <div className="_9wvo">Consumer Goods</div>
+                    <div className="_4jqn">
+                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
-            <div span={8} className="_3iwp">
-              <a href="#" className="_8ahh block has-hover">
-                <div className="_4rfh image-zoom">
-                  <img src="/images/website/market_5.png" className="_5mgw" />
-                </div>
-                <div className="_1blc">
-                  <div className="_9wvo">Building Materials</div>
-                  <div className="_4jqn">
-                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                </a>
+              </Col>
+              <Col span={8} className="_3iwp">
+                <a href="#" className="_8ahh block has-hover">
+                  <div className="_4rfh image-zoom">
+                    <img src="/images/website/market_3.png" className="_5mgw" />
                   </div>
-                </div>
-              </a>
-            </div>
-            <div span={8} className="_3iwp">
-              <a href="#" className="_8ahh block has-hover">
-                <div className="_4rfh image-zoom">
-                  <img src="/images/website/market_6.png" className="_5mgw" />
-                </div>
-                <div className="_1blc">
-                  <div className="_9wvo">Raw Materials</div>
-                  <div className="_4jqn">
-                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  <div className="_1blc">
+                    <div className="_9wvo">Packaging</div>
+                    <div className="_4jqn">
+                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </Col>
+              <Col span={8} className="_3iwp">
+                <a href="#" className="_8ahh block has-hover">
+                  <div className="_4rfh image-zoom">
+                    <img src="/images/website/market_4.png" className="_5mgw" />
+                  </div>
+                  <div className="_1blc">
+                    <div className="_9wvo">Engineering Plastics</div>
+                    <div className="_4jqn">
+                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                    </div>
+                  </div>
+                </a>
+              </Col>
+              <Col span={8} className="_3iwp">
+                <a href="#" className="_8ahh block has-hover">
+                  <div className="_4rfh image-zoom">
+                    <img src="/images/website/market_5.png" className="_5mgw" />
+                  </div>
+                  <div className="_1blc">
+                    <div className="_9wvo">Building Materials</div>
+                    <div className="_4jqn">
+                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                    </div>
+                  </div>
+                </a>
+              </Col>
+              <Col span={8} className="_3iwp">
+                <a href="#" className="_8ahh block has-hover">
+                  <div className="_4rfh image-zoom">
+                    <img src="/images/website/market_6.png" className="_5mgw" />
+                  </div>
+                  <div className="_1blc">
+                    <div className="_9wvo">Raw Materials</div>
+                    <div className="_4jqn">
+                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                    </div>
+                  </div>
+                </a>
+              </Col>
+            </Row>
           </div>
         </div>
       </section>
@@ -238,64 +240,66 @@ function AllProduct() {
             </Row>
           </div>
           <div className="_5tcj">
-            <div className="_6npx">
-              <div className="_2jjl">
-                <div className="_8ghs">
-                  <a href="#" className="block">
-                    <img
-                      src="/images/website/vertical_1.png"
-                      className="_9rtu"
-                    />
-                  </a>
-                </div>
-                <div className="_0cac">
-                  <div className="_9not">
-                    <div className="_2pzh">
-                      <a href="#">Compostable Products</a>
-                    </div>
-                    <div className="_8ynm textLine-5">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry.
-                    </div>
-                  </div>
-                  <div className="_3qdw">
-                    <a href="#" className="button button-outline-green">
-                      <span>View products</span>
-                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+            <Row gutter={30}>
+              <Col span={12} className="_6npx">
+                <div className="_2jjl">
+                  <div className="_8ghs">
+                    <a href="#" className="block">
+                      <img
+                        src="/images/website/vertical_1.png"
+                        className="_9rtu"
+                      />
                     </a>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="_6npx">
-              <div className="_2jjl">
-                <div className="_8ghs">
-                  <a href="#" className="block">
-                    <img
-                      src="/images/website/vertical_2.png"
-                      className="_9rtu"
-                    />
-                  </a>
-                </div>
-                <div className="_0cac">
-                  <div className="_9not">
-                    <div className="_2pzh">
-                      <a href="#">Compostable Materials</a>
+                  <div className="_0cac">
+                    <div className="_9not">
+                      <div className="_2pzh">
+                        <a href="#">Compostable Products</a>
+                      </div>
+                      <div className="_8ynm textLine-5">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                      </div>
                     </div>
-                    <div className="_8ynm textLine-5">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry.
+                    <div className="_3qdw">
+                      <a href="#" className="button button-outline-green">
+                        <span>View products</span>
+                        <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                      </a>
                     </div>
                   </div>
-                  <div className="_3qdw">
-                    <a href="#" className="button button-outline-green">
-                      <span>View products</span>
-                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                </div>
+              </Col>
+              <Col span={12} className="_6npx">
+                <div className="_2jjl">
+                  <div className="_8ghs">
+                    <a href="#" className="block">
+                      <img
+                        src="/images/website/vertical_2.png"
+                        className="_9rtu"
+                      />
                     </a>
                   </div>
+                  <div className="_0cac">
+                    <div className="_9not">
+                      <div className="_2pzh">
+                        <a href="#">Compostable Materials</a>
+                      </div>
+                      <div className="_8ynm textLine-5">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                      </div>
+                    </div>
+                    <div className="_3qdw">
+                      <a href="#" className="button button-outline-green">
+                        <span>View products</span>
+                        <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
         </div>
       </section>
@@ -311,110 +315,112 @@ function AllProduct() {
             </Row>
           </div>
           <div className="_5msj">
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img
-                    src="/images/website/consummer_1.png"
-                    className="_1qlp"
-                  />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-1">
-                    Cutlery/Straws
+            <Row gutter={30}>
+              <Col xs={24} md={12} lg={6} className="_4euo">
+                <div className="_8aey">
+                  <a href="#" className="block">
+                    <img
+                      src="/images/website/consummer_1.png"
+                      className="_1qlp"
+                    />
                   </a>
                 </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
+                <div className="_3pxh">
+                  <div className="_0cvj">
+                    <a href="#" className="textLine-1">
+                      Cutlery/Straws
+                    </a>
+                  </div>
+                  <div className="_8gbl textLine-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure odit, cumque fuga labore corrupti dolor, non provident
+                    nobis eius facere voluptas quam aliquam at quos, officiis
+                    eveniet vero porro sequi!
+                  </div>
+                  <div className="_4jqn">
+                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  </div>
                 </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img
-                    src="/images/website/consummer_2.png"
-                    className="_1qlp"
-                  />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-1">
-                    Cups/Lids
+              </Col>
+              <Col xs={24} md={12} lg={6} className="_4euo">
+                <div className="_8aey">
+                  <a href="#" className="block">
+                    <img
+                      src="/images/website/consummer_2.png"
+                      className="_1qlp"
+                    />
                   </a>
                 </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
+                <div className="_3pxh">
+                  <div className="_0cvj">
+                    <a href="#" className="textLine-1">
+                      Cups/Lids
+                    </a>
+                  </div>
+                  <div className="_8gbl textLine-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure odit, cumque fuga labore corrupti dolor, non provident
+                    nobis eius facere voluptas quam aliquam at quos, officiis
+                    eveniet vero porro sequi!
+                  </div>
+                  <div className="_4jqn">
+                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  </div>
                 </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img
-                    src="/images/website/consummer_3.png"
-                    className="_1qlp"
-                  />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-1">
-                    Food Containers
+              </Col>
+              <Col xs={24} md={12} lg={6} className="_4euo">
+                <div className="_8aey">
+                  <a href="#" className="block">
+                    <img
+                      src="/images/website/consummer_3.png"
+                      className="_1qlp"
+                    />
                   </a>
                 </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
+                <div className="_3pxh">
+                  <div className="_0cvj">
+                    <a href="#" className="textLine-1">
+                      Food Containers
+                    </a>
+                  </div>
+                  <div className="_8gbl textLine-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure odit, cumque fuga labore corrupti dolor, non provident
+                    nobis eius facere voluptas quam aliquam at quos, officiis
+                    eveniet vero porro sequi!
+                  </div>
+                  <div className="_4jqn">
+                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  </div>
                 </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img
-                    src="/images/website/consummer_4.png"
-                    className="_1qlp"
-                  />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-1">
-                    Glovess
+              </Col>
+              <Col xs={24} md={12} lg={6} className="_4euo">
+                <div className="_8aey">
+                  <a href="#" className="block">
+                    <img
+                      src="/images/website/consummer_4.png"
+                      className="_1qlp"
+                    />
                   </a>
                 </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
+                <div className="_3pxh">
+                  <div className="_0cvj">
+                    <a href="#" className="textLine-1">
+                      Glovess
+                    </a>
+                  </div>
+                  <div className="_8gbl textLine-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure odit, cumque fuga labore corrupti dolor, non provident
+                    nobis eius facere voluptas quam aliquam at quos, officiis
+                    eveniet vero porro sequi!
+                  </div>
+                  <div className="_4jqn">
+                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  </div>
                 </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
         </div>
       </section>
@@ -431,64 +437,66 @@ function AllProduct() {
           </div>
 
           <div className="_5tcj">
-            <div className="_6npx">
-              <div className="_2jjl">
-                <div className="_8ghs">
-                  <a href="#" className="block">
-                    <img
-                      src="/images/website/Packaging_1.png"
-                      className="_9rtu"
-                    />
-                  </a>
-                </div>
-                <div className="_0cac">
-                  <div className="_9not">
-                    <div className="_2pzh">
-                      <a href="#">Consumer Packaging</a>
-                    </div>
-                    <div className="_8ynm textLine-5">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry.
-                    </div>
-                  </div>
-                  <div className="_3qdw">
-                    <a href="#" className="button button-outline-green">
-                      <span>View products</span>
-                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+            <Row gutter={30}>
+              <Col span={12} className="_6npx">
+                <div className="_2jjl">
+                  <div className="_8ghs">
+                    <a href="#" className="block">
+                      <img
+                        src="/images/website/Packaging_1.png"
+                        className="_9rtu"
+                      />
                     </a>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="_6npx">
-              <div className="_2jjl">
-                <div className="_8ghs">
-                  <a href="#" className="block">
-                    <img
-                      src="/images/website/Packaging_2.png"
-                      className="_9rtu"
-                    />
-                  </a>
-                </div>
-                <div className="_0cac">
-                  <div className="_9not">
-                    <div className="_2pzh">
-                      <a href="#">Industrial Packaging</a>
+                  <div className="_0cac">
+                    <div className="_9not">
+                      <div className="_2pzh">
+                        <a href="#">Consumer Packaging</a>
+                      </div>
+                      <div className="_8ynm textLine-5">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                      </div>
                     </div>
-                    <div className="_8ynm textLine-5">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry.
+                    <div className="_3qdw">
+                      <a href="#" className="button button-outline-green">
+                        <span>View products</span>
+                        <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                      </a>
                     </div>
                   </div>
-                  <div className="_3qdw">
-                    <a href="#" className="button button-outline-green">
-                      <span>View products</span>
-                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                </div>
+              </Col>
+              <Col span={12} className="_6npx">
+                <div className="_2jjl">
+                  <div className="_8ghs">
+                    <a href="#" className="block">
+                      <img
+                        src="/images/website/Packaging_2.png"
+                        className="_9rtu"
+                      />
                     </a>
                   </div>
+                  <div className="_0cac">
+                    <div className="_9not">
+                      <div className="_2pzh">
+                        <a href="#">Industrial Packaging</a>
+                      </div>
+                      <div className="_8ynm textLine-5">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                      </div>
+                    </div>
+                    <div className="_3qdw">
+                      <a href="#" className="button button-outline-green">
+                        <span>View products</span>
+                        <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
         </div>
       </section>
@@ -504,136 +512,86 @@ function AllProduct() {
             </Row>
           </div>
           <div className="_5msj">
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img
-                    src="/images/website/Engineering_1.png"
-                    className="_1qlp"
-                  />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-2">
-                    Automotive/Motorbike Parts
+            <Row gutter={30}>
+              <Col span={8} className="_4euo">
+                <div className="_8aey">
+                  <a href="#" className="block">
+                    <img
+                      src="/images/website/Engineering_1.png"
+                      className="_1qlp"
+                    />
                   </a>
                 </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
+                <div className="_3pxh">
+                  <div className="_0cvj">
+                    <a href="#" className="textLine-2">
+                      Automotive/Motorbike Parts
+                    </a>
+                  </div>
+                  <div className="_8gbl textLine-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure odit, cumque fuga labore corrupti dolor, non provident
+                    nobis eius facere voluptas quam aliquam at quos, officiis
+                    eveniet vero porro sequi!
+                  </div>
+                  <div className="_4jqn">
+                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  </div>
                 </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img
-                    src="/images/website/Engineering_2.png"
-                    className="_1qlp"
-                  />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-2">
-                    Molds
+              </Col>
+              <Col span={8} className="_4euo">
+                <div className="_8aey">
+                  <a href="#" className="block">
+                    <img
+                      src="/images/website/Engineering_2.png"
+                      className="_1qlp"
+                    />
                   </a>
                 </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
+                <div className="_3pxh">
+                  <div className="_0cvj">
+                    <a href="#" className="textLine-2">
+                      Molds
+                    </a>
+                  </div>
+                  <div className="_8gbl textLine-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure odit, cumque fuga labore corrupti dolor, non provident
+                    nobis eius facere voluptas quam aliquam at quos, officiis
+                    eveniet vero porro sequi!
+                  </div>
+                  <div className="_4jqn">
+                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  </div>
                 </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img
-                    src="/images/website/Engineering_3.png"
-                    className="_1qlp"
-                  />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-2">
-                    Household Appliances Parts
+              </Col>
+              <Col span={8} className="_4euo">
+                <div className="_8aey">
+                  <a href="#" className="block">
+                    <img
+                      src="/images/website/Engineering_3.png"
+                      className="_1qlp"
+                    />
                   </a>
                 </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
+                <div className="_3pxh">
+                  <div className="_0cvj">
+                    <a href="#" className="textLine-2">
+                      Household Appliances Parts
+                    </a>
+                  </div>
+                  <div className="_8gbl textLine-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure odit, cumque fuga labore corrupti dolor, non provident
+                    nobis eius facere voluptas quam aliquam at quos, officiis
+                    eveniet vero porro sequi!
+                  </div>
+                  <div className="_4jqn">
+                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  </div>
                 </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img
-                    src="/images/website/Engineering_4.png"
-                    className="_1qlp"
-                  />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-2">
-                    Electronics Parts
-                  </a>
-                </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
-                </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img
-                    src="/images/website/Engineering_5.png"
-                    className="_1qlp"
-                  />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-2">
-                    Pallets/Cargo Containers
-                  </a>
-                </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
-                </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
         </div>
       </section>
@@ -649,64 +607,66 @@ function AllProduct() {
             </Row>
           </div>
           <div className="_5tcj">
-            <div className="_6npx">
-              <div className="_2jjl">
-                <div className="_8ghs">
-                  <a href="#" className="block">
-                    <img
-                      src="/images/website/Building_1.png"
-                      className="_9rtu"
-                    />
-                  </a>
-                </div>
-                <div className="_0cac">
-                  <div className="_9not">
-                    <div className="_2pzh">
-                      <a href="#">Interior</a>
-                    </div>
-                    <div className="_8ynm textLine-5">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry.
-                    </div>
-                  </div>
-                  <div className="_3qdw">
-                    <a href="#" className="button button-outline-green">
-                      <span>View products</span>
-                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+            <Row gutter={30}>
+              <Col span={12} className="_6npx">
+                <div className="_2jjl">
+                  <div className="_8ghs">
+                    <a href="#" className="block">
+                      <img
+                        src="/images/website/Building_1.png"
+                        className="_9rtu"
+                      />
                     </a>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="_6npx">
-              <div className="_2jjl">
-                <div className="_8ghs">
-                  <a href="#" className="block">
-                    <img
-                      src="/images/website/Building_2.png"
-                      className="_9rtu"
-                    />
-                  </a>
-                </div>
-                <div className="_0cac">
-                  <div className="_9not">
-                    <div className="_2pzh">
-                      <a href="#">Exterior</a>
+                  <div className="_0cac">
+                    <div className="_9not">
+                      <div className="_2pzh">
+                        <a href="#">Interior</a>
+                      </div>
+                      <div className="_8ynm textLine-5">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                      </div>
                     </div>
-                    <div className="_8ynm textLine-5">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry.
+                    <div className="_3qdw">
+                      <a href="#" className="button button-outline-green">
+                        <span>View products</span>
+                        <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                      </a>
                     </div>
                   </div>
-                  <div className="_3qdw">
-                    <a href="#" className="button button-outline-green">
-                      <span>View products</span>
-                      <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                </div>
+              </Col>
+              <Col span={12} className="_6npx">
+                <div className="_2jjl">
+                  <div className="_8ghs">
+                    <a href="#" className="block">
+                      <img
+                        src="/images/website/Building_2.png"
+                        className="_9rtu"
+                      />
                     </a>
                   </div>
+                  <div className="_0cac">
+                    <div className="_9not">
+                      <div className="_2pzh">
+                        <a href="#">Exterior</a>
+                      </div>
+                      <div className="_8ynm textLine-5">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                      </div>
+                    </div>
+                    <div className="_3qdw">
+                      <a href="#" className="button button-outline-green">
+                        <span>View products</span>
+                        <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
         </div>
       </section>
@@ -722,75 +682,77 @@ function AllProduct() {
             </Row>
           </div>
           <div className="_5msj">
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img src="/images/website/Raw_1.png" className="_1qlp" />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-2">
-                    Plastic Resins
+            <Row gutter={30}>
+              <Col xs={24} md={8} className="_4euo">
+                <div className="_8aey">
+                  <a href="#" className="block">
+                    <img src="/images/website/Raw_1.png" className="_1qlp" />
                   </a>
                 </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
+                <div className="_3pxh">
+                  <div className="_0cvj">
+                    <a href="#" className="textLine-2">
+                      Plastic Resins
+                    </a>
+                  </div>
+                  <div className="_8gbl textLine-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure odit, cumque fuga labore corrupti dolor, non provident
+                    nobis eius facere voluptas quam aliquam at quos, officiis
+                    eveniet vero porro sequi!
+                  </div>
+                  <div className="_4jqn">
+                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  </div>
                 </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img src="/images/website/Raw_2.png" className="_1qlp" />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-2">
-                    Masterbatch/Compound
+              </Col>
+              <Col xs={24} md={8} className="_4euo">
+                <div className="_8aey">
+                  <a href="#" className="block">
+                    <img src="/images/website/Raw_2.png" className="_1qlp" />
                   </a>
                 </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
+                <div className="_3pxh">
+                  <div className="_0cvj">
+                    <a href="#" className="textLine-2">
+                      Masterbatch/Compound
+                    </a>
+                  </div>
+                  <div className="_8gbl textLine-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure odit, cumque fuga labore corrupti dolor, non provident
+                    nobis eius facere voluptas quam aliquam at quos, officiis
+                    eveniet vero porro sequi!
+                  </div>
+                  <div className="_4jqn">
+                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  </div>
                 </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
-            <div className="_4euo">
-              <div className="_8aey">
-                <a href="#" className="block">
-                  <img src="/images/website/Raw_3.png" className="_1qlp" />
-                </a>
-              </div>
-              <div className="_3pxh">
-                <div className="_0cvj">
-                  <a href="#" className="textLine-2">
-                    CaCO3 Powder
+              </Col>
+              <Col xs={24} md={8} className="_4euo">
+                <div className="_8aey">
+                  <a href="#" className="block">
+                    <img src="/images/website/Raw_3.png" className="_1qlp" />
                   </a>
                 </div>
-                <div className="_8gbl textLine-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  odit, cumque fuga labore corrupti dolor, non provident nobis
-                  eius facere voluptas quam aliquam at quos, officiis eveniet
-                  vero porro sequi!
+                <div className="_3pxh">
+                  <div className="_0cvj">
+                    <a href="#" className="textLine-2">
+                      CaCO3 Powder
+                    </a>
+                  </div>
+                  <div className="_8gbl textLine-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure odit, cumque fuga labore corrupti dolor, non provident
+                    nobis eius facere voluptas quam aliquam at quos, officiis
+                    eveniet vero porro sequi!
+                  </div>
+                  <div className="_4jqn">
+                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+                  </div>
                 </div>
-                <div className="_4jqn">
-                  <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-                </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
         </div>
       </section>
