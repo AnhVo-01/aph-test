@@ -467,6 +467,18 @@
 }
 
 // CATEGORY
+.image-zoom {
+  width: 300px;
+  height: 250px;
+  border-radius: 20px;
+  display: block;
+  object-fit: contain;
+  ._8wjh {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
 .box-product {
   .customer-box-image-product {
     border-radius: 20px;
@@ -477,6 +489,12 @@
     font-weight: 600;
     color: #1e246e;
     margin: 10px 0;
+    .product_link {
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      display: -webkit-box;
+    }
   }
   .sku {
     font-size: 14px;

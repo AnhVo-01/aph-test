@@ -11,19 +11,59 @@ import {
   Row,
   Slider,
 } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import dataMock from "../mock/data-product.json";
+import { useDispatch } from "react-redux";
+
 import { useNavigate } from "react-router-dom";
+import ProductsService from "../services/productsService";
+import CategoryService from "../services/categoryService";
+import { setCategories } from "../redux/category";
 
 function Category() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   // Bỏ cmt nếu bạn sử dụng phần này
   // const { productCategory } = useSelector((state) => state.category);
 
   const [form] = Form.useForm();
+  const [dataCategory, setDataCategory] = useState([]);
+  const [dataProducts, setDataProducts] = useState([]);
+  const productService = new ProductsService(
+    import.meta.env.VITE_BASE_URL,
+    () => {}
+  );
+  const categoryService = new CategoryService(
+    import.meta.env.VITE_BASE_URL,
+    () => {}
+  );
 
-  const [filterData, setFilterData] = useState(dataMock);
+  useEffect(() => {
+    try {
+      const fetchDataCategory = async () => {
+        const categories = await categoryService.getAllCategories();
+        setDataCategory(categories);
+        dispatch(setCategories(categories));
+      };
+      fetchDataCategory();
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  }, []);
+  useEffect(() => {
+    try {
+      const fetchDataProducts = async () => {
+        const products = await productService.getAllProducts();
+        setDataProducts(products);
+      };
+      fetchDataProducts();
+    } catch (err) {
+      console.error("Error fetching products:", err);
+    }
+  }, []);
+
+  const [filterData, setFilterData] = useState(dataProducts);
   const [isSubmitDisabled, setSubmitDisabled] = useState(true);
 
   const onValuesChange = (changedValues, allValues) => {
@@ -38,7 +78,7 @@ function Category() {
       return;
     }
 
-    let filtered = dataMock;
+    let filtered = dataProducts;
 
     if (values.categories && values.categories.length > 0) {
       filtered = filtered.filter((item) =>
@@ -197,8 +237,14 @@ function Category() {
                       className="widget_product_categories"
                     >
                       <Checkbox.Group className="form-group">
-                        <Checkbox value={1}>Consumer Packaging</Checkbox>
-                        <Checkbox value={2}>Industrial Packaging</Checkbox>
+                        {dataCategory?.map((category) => (
+                          <Checkbox
+                            value={category.categoryId}
+                            key={category.categoryId}
+                          >
+                            {category.categoryName}
+                          </Checkbox>
+                        ))}
                       </Checkbox.Group>
                     </Form.Item>
 
@@ -256,17 +302,17 @@ function Category() {
                 </div>
                 <div className="products">
                   <Row gutter={30}>
-                    {filterData.map((item) => {
-                      const url = item.sku
-                        .toLowerCase()
-                        .replace(/[^a-z0-9]+/g, "-")
-                        .replace(/(^-|-$)/g, "");
+                    {(filterData && filterData.length > 0
+                      ? filterData
+                      : dataProducts
+                    ).map((item) => {
+                      const url = item.productId;
                       return (
                         <Col
                           xs={24}
                           md={8}
                           className="col has-hover product"
-                          key={item.id}
+                          key={item.productId}
                         >
                           <div className="col-inner">
                             <div className="box-product has-hover">
@@ -277,9 +323,9 @@ function Category() {
                                   style={{ cursor: "pointer" }}
                                 >
                                   <img
-                                    src={item.image}
+                                    src={item.img}
                                     className="_8wjh"
-                                    alt={item.name}
+                                    alt={item.img}
                                   />
                                 </a>
                               </div>
@@ -293,11 +339,11 @@ function Category() {
                                       }
                                       style={{ cursor: "pointer" }}
                                     >
-                                      {item.name}
+                                      {item.productName}
                                     </a>
                                   </h4>
                                   <p className="sku">
-                                    SKU: <span>{item.sku}</span>
+                                    Price: <span>{item.price}</span>
                                   </p>
                                 </div>
                               </div>

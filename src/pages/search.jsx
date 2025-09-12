@@ -10,36 +10,56 @@ import {
   Row,
   Slider,
 } from "antd";
-import dataMock from "../mock/data-product.json";
+
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { SearchOutlined } from "@ant-design/icons";
+import ProductsService from "../services/productsService";
+import CategoryServices from "../services/categoryService";
 
 function SearchScreen() {
   const navigate = useNavigate();
+
   const query = new URLSearchParams(useLocation().search);
+  const [dataSearch, setDataSearch] = useState();
   const textSearch = query.get("query") || "";
+  const [dataCategory, setDataCategory] = useState([]);
 
   const [form] = Form.useForm();
   const [filterData, setFilterData] = useState([]);
   const [isSubmitDisabled, setSubmitDisabled] = useState(true);
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0 });
-    // Tìm kiếm mặc định theo từ khóa trên url
-    if (textSearch) {
-      const search = textSearch.trim().toLowerCase();
-      const filtered = dataMock.filter(
-        (item) =>
-          item.name.toLowerCase().includes(search) ||
-          item.sku.toLowerCase().includes(search)
-      );
-      setFilterData(filtered);
-    } else {
-      setFilterData(dataMock);
+  const productsService = new ProductsService(
+    import.meta.env.VITE_BASE_URL,
+    () => {}
+  );
+  const categoryService = new CategoryServices(
+    import.meta.env.VITE_BASE_URL,
+    () => {}
+  );
+  const fetchDataSearch = async () => {
+    try {
+      const response = await productsService.searchProducts(textSearch);
+      setDataSearch(response);
+    } catch (error) {
+      console.error("Error fetching search data:", error);
     }
+  };
+  useEffect(() => {
+    try {
+      const fetchDataCategory = async () => {
+        const categories = await categoryService.getAllCategories();
+        setDataCategory(categories);
+      };
+      fetchDataCategory();
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  }, []);
+  useEffect(() => {
+    fetchDataSearch();
   }, [textSearch]);
+  console.log("dataSearch", dataSearch);
 
   const onValuesChange = (changedValues, allValues) => {
     const hasValue = Object.values(allValues).some((value) => value);
@@ -49,34 +69,34 @@ function SearchScreen() {
   const onFilter = async (values) => {
     const hasValue = Object.values(values).some((value) => value);
     if (!hasValue) {
-      setFilterData(dataMock);
+      setFilterData(dataSearch);
       return;
     }
 
-    let filtered = dataMock;
+    let filtered = dataSearch;
 
     if (values.categories && values.categories.length > 0) {
-      filtered = filtered.filter((item) =>
+      filtered = filtered?.filter((item) =>
         values.categories.includes(item.categoryId)
       );
     }
 
     if (values["Type of"] && values["Type of"].length > 0) {
-      filtered = filtered.filter((item) =>
+      filtered = filtered?.filter((item) =>
         values["Type of"].includes(item.type)
       );
     }
 
     if (values["Width (cm)"] && Array.isArray(values["Width (cm)"])) {
       const [minW, maxW] = values["Width (cm)"];
-      filtered = filtered.filter(
+      filtered = filtered?.filter(
         (item) => item.width >= minW && item.width <= maxW
       );
     }
 
     if (values["Length (cm)"] && Array.isArray(values["Length (cm)"])) {
       const [minL, maxL] = values["Length (cm)"];
-      filtered = filtered.filter(
+      filtered = filtered?.filter(
         (item) => item.length >= minL && item.length <= maxL
       );
     }
@@ -101,7 +121,7 @@ function SearchScreen() {
 
   const clearFilters = () => {
     form.resetFields();
-    setFilterData(dataMock);
+    setFilterData(dataSearch);
     setSubmitDisabled(true);
   };
 
@@ -212,8 +232,14 @@ function SearchScreen() {
                         className="widget_product_categories"
                       >
                         <Checkbox.Group className="form-group">
-                          <Checkbox value={1}>Consumer Packaging</Checkbox>
-                          <Checkbox value={2}>Industrial Packaging</Checkbox>
+                          {dataCategory?.map((category) => (
+                            <Checkbox
+                              value={category.categoryId}
+                              key={category.categoryId}
+                            >
+                              {category.categoryName}
+                            </Checkbox>
+                          ))}
                         </Checkbox.Group>
                       </Form.Item>
 
@@ -276,17 +302,17 @@ function SearchScreen() {
                   </div>
                   <div className="products">
                     <Row gutter={30}>
-                      {filterData.map((item) => {
-                        const url = item.name
-                          .toLowerCase()
-                          .replace(/[^a-z0-9]+/g, "-")
-                          .replace(/(^-|-$)/g, "");
+                      {(filterData && filterData.length > 0
+                        ? filterData
+                        : dataSearch || []
+                      ).map((item) => {
+                        const url = item.productId || item.id;
                         return (
                           <Col
                             xs={24}
                             md={8}
                             className="col has-hover product"
-                            key={item.id}
+                            key={item.productId || item.id}
                           >
                             <div className="col-inner">
                               <div className="box-product has-hover">
@@ -297,9 +323,9 @@ function SearchScreen() {
                                     style={{ cursor: "pointer" }}
                                   >
                                     <img
-                                      src={item.image}
+                                      src={item.img || item.image}
                                       className="_8wjh"
-                                      alt={item.name}
+                                      alt={item.productName || item.name}
                                     />
                                   </a>
                                 </div>
@@ -313,11 +339,11 @@ function SearchScreen() {
                                         }
                                         style={{ cursor: "pointer" }}
                                       >
-                                        {item.name}
+                                        {item.productName || item.name}
                                       </a>
                                     </h4>
                                     <p className="sku">
-                                      SKU: <span>{item.sku}</span>
+                                      Price: <span>{item.price}</span>
                                     </p>
                                   </div>
                                 </div>

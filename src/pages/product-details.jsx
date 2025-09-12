@@ -7,11 +7,29 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Mousewheel, Pagination, Thumbs } from "swiper/modules";
 import defaultImage from "../assets/images/defaultImage.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProductsService from "../services/productsService";
 
 function ProductDetail() {
   const { url } = useParams();
-
+  console.log("url", url);
+  const productsService = new ProductsService(
+    import.meta.env.VITE_BASE_URL,
+    () => {}
+  );
   const swiperRef = useRef(null);
+  const [dataProducts, setDataProducts] = useState([]);
+  const fetchdata = async () => {
+    try {
+      const products = await productsService.getProductById(url);
+      setDataProducts(products);
+    } catch (err) {
+      console.error("Error fetching products:", err);
+    }
+  };
+  useEffect(() => {
+    fetchdata();
+  }, [url]);
+  console.log("dataProducts", dataProducts);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [direction, setDirection] = useState("vertical");
 
@@ -100,30 +118,17 @@ function ProductDetail() {
                   onSwiper={setThumbsSwiper}
                   className="ThumbGallery GalleryArea"
                 >
-                  <SwiperSlide>
-                    <Image
-                      src="/images/website/product_1.png"
-                      alt="Product Thumb"
-                      fallback={defaultImage}
-                      preview={false}
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image
-                      src="/images/website/product_2.png"
-                      alt=""
-                      fallback={defaultImage}
-                      preview={false}
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image
-                      src="/images/website/product_3.png"
-                      alt=""
-                      fallback={defaultImage}
-                      preview={false}
-                    />
-                  </SwiperSlide>
+                  {dataProducts.productvariant &&
+                    dataProducts.productvariant.map((item) => (
+                      <SwiperSlide key={item.id}>
+                        <Image
+                          src={item.img}
+                          alt="Product Thumb"
+                          fallback={defaultImage}
+                          preview={false}
+                        />
+                      </SwiperSlide>
+                    ))}
                 </Swiper>
                 <Image.PreviewGroup>
                   <Swiper
@@ -131,26 +136,10 @@ function ProductDetail() {
                     thumbs={{ swiper: thumbsSwiper }}
                     className="ProductGallery GalleryArea"
                   >
-                    <SwiperSlide>
+                    <SwiperSlide key={dataProducts.id}>
                       <Image
-                        src="/images/website/product_1.png"
+                        src={dataProducts.img}
                         alt="Product Thumb"
-                        fallback={defaultImage}
-                        preview={false}
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <Image
-                        src="/images/website/product_2.png"
-                        alt=""
-                        fallback={defaultImage}
-                        preview={false}
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <Image
-                        src="/images/website/product_3.png"
-                        alt=""
                         fallback={defaultImage}
                         preview={false}
                       />
@@ -173,16 +162,18 @@ function ProductDetail() {
             <div className="_5enz">
               <div className="product-info">
                 <h1 className="product-title product_title entry-title">
-                  Food Wrap
+                  {dataProducts.productName}
                 </h1>
                 <div className="sku">
-                  <strong>SKU: </strong>
-                  <span>036897488221-2</span>
+                  <strong>price: </strong>
+                  <span>{dataProducts.price}</span>
                 </div>
                 <div className="description">
-                  100% compostable: made from PBAT compostable material, AnEco
-                  food wrap is capable of completely decomposing within 6-12
-                  months into humus, water, Co2.
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: dataProducts.productDes,
+                    }}
+                  />
                 </div>
                 <div className="_6zrw">
                   <Link to="/contact-us" className="button button-gradient">
@@ -217,33 +208,6 @@ function ProductDetail() {
           </div>
         </div>
       </section>
-
-      {/* <section className="spinally-zee section">
-        <div className="section-content relative">
-          <div className="_7zow row">
-            <div className="_4cnm col large-12 medium-12 small-12 RemovePaddingBottom">
-              <div className="col-inner">
-                <div className="_4zte">
-                  <h2 className="_9orw">Specifications</h2>
-                  <Button
-                    style={{ textTransform: "none" }}
-                    type="link"
-                    className="_2oxj"
-                  >
-                    <span>Download data sheet</span>
-                    <i className="fa-regular fa-arrow-right"></i>
-                  </Button>
-                </div>
-              </div>
-            </div>
-            <div className="_5nyy col large-12 medium-12 small-12 RemovePaddingBottom">
-              <div className="col-inner">
-                <div className="wrapper-table"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="xylomas-goad section">
         <div className="section-content relative">
