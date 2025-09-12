@@ -145,7 +145,7 @@ function AllProduct() {
             </Row>
           </div>
           <div className="_0odn">
-            <div span={8} className="_3iwp">
+            <div className="_3iwp">
               <a href="#" className="_8ahh block has-hover">
                 <div className="_4rfh image-zoom">
                   <img src="/images/website/market_1.png" className="_5mgw" />
@@ -158,7 +158,7 @@ function AllProduct() {
                 </div>
               </a>
             </div>
-            <div span={8} className="_3iwp">
+            <div className="_3iwp">
               <a href="#" className="_8ahh block has-hover">
                 <div className="_4rfh image-zoom">
                   <img src="/images/website/market_2.png" className="_5mgw" />
@@ -171,7 +171,7 @@ function AllProduct() {
                 </div>
               </a>
             </div>
-            <div span={8} className="_3iwp">
+            <div className="_3iwp">
               <a href="#" className="_8ahh block has-hover">
                 <div className="_4rfh image-zoom">
                   <img src="/images/website/market_3.png" className="_5mgw" />
@@ -184,7 +184,7 @@ function AllProduct() {
                 </div>
               </a>
             </div>
-            <div span={8} className="_3iwp">
+            <div className="_3iwp">
               <a href="#" className="_8ahh block has-hover">
                 <div className="_4rfh image-zoom">
                   <img src="/images/website/market_4.png" className="_5mgw" />
@@ -197,7 +197,7 @@ function AllProduct() {
                 </div>
               </a>
             </div>
-            <div span={8} className="_3iwp">
+            <div className="_3iwp">
               <a href="#" className="_8ahh block has-hover">
                 <div className="_4rfh image-zoom">
                   <img src="/images/website/market_5.png" className="_5mgw" />
@@ -210,7 +210,7 @@ function AllProduct() {
                 </div>
               </a>
             </div>
-            <div span={8} className="_3iwp">
+            <div className="_3iwp">
               <a href="#" className="_8ahh block has-hover">
                 <div className="_4rfh image-zoom">
                   <img src="/images/website/market_6.png" className="_5mgw" />
