@@ -1,23 +1,49 @@
-<div align="center"><a name="readme-top"></a>
+<div align="center">
 
 <img height="100" src="https://anphatholdings.vn/wp-content/uploads/2019/12/Logo-An-Phat.png">
 
 <h1>Bài kiểm tra React</h1>
 </div>
+Vui lòng đọc kỹ hướng dẫn trước khi bắt đầu.
+Chúc bạn may mắn 🍀
+
+</br>
 
 ## 🖥 Môi trường
 
 - React 18
-- NodeJS: >= 18.20.8 (Khuyến nghị sử dụng phiên bản bản LTS >= 20.19.4)
+- NodeJS: >= 18.20.8 (Khuyến nghị sử dụng phiên bản bản LTS >= 20.19.5)
 - Visual Studio Code (Hoặc các code editor khác)
 - Git
 
-## 📦 Cài đặt
+## 🚀 Bắt đầu
 
-1. Clone repo về máy
-2. Tạo nhánh riêng từ main
-3. Tiến hành thực hiện theo yêu cầu
-4. Commit code lên nhánh riêng (không cần merge vào main)
+1. **Tạo repository riêng của bạn từ repo này**
+
+   - Nhấn nút **"Use this template"** ở góc trên bên phải.
+   - Chọn **Create a new repository**.
+   - Đặt tên repo theo format:
+     ```
+     <tên-ứng-viên>-AphTest
+     ```
+     (Ví dụ: `nguyen-van-a-AphTest`)
+
+2. **Clone repo mới về máy của bạn**
+   ```bash
+   git clone https://github.com/<tên-user>/<repo-vừa-tạo>.git
+   cd <repo-vừa-tạo>
+   ```
+
+## 📤 Cách nộp bài
+
+Sau khi hoàn thành, bạn có 2 cách để nộp:
+
+- **Cách 1**: Gửi link repo của bạn cho HR hoặc người phụ trách tuyển dụng.
+
+- **Cách 2:**
+
+  - Vào `repo → Settings → Collaborators`
+  - Nhấn `Add people` và nhập GitHub username: `AnhVo-01`
 
 ## 🔨 Một số câu lệnh làm việc
 
@@ -56,7 +82,7 @@ $ npm run dev
 - [Dev mode](https://www.figma.com/design/IySGuTvZnBSJT5FA5RLceI/Product-Introduction?node-id=0-1&m=dev&t=EQ48VlCkYx6SsaFc-1)
 - [Prototype](https://www.figma.com/proto/zoSD9PIncj3vjaO65YOEwQ?node-id=3-3&t=J9ywAOBbzt3iNi5z-6)
 
-### Yêu cầu chức năng:
+### Yêu cầu chức năng (Bắt buộc):
 
 #### 1. Trang danh mục sản phẩm:
 
@@ -114,7 +140,7 @@ $ npm run dev
 }
 ```
 
-### Các API khác:
+### Các API khác (Tùy chọn):
 
 - Lấy dữ liệu từ API: `GET /product/GetRelatedProducts, params: {lang=en, id=:productId}` → trả về danh sách các sản phẩm liên quan (sử dụng tại trang chi tiết sản phẩm):
 
@@ -143,7 +169,7 @@ $ npm run dev
 
 > 🔸 **Lưu ý**:
 >
-> - Bạn cần tự fake data khi thực hiện, URL API và dữ liệu thật sẽ được cung cấp tại buổi phỏng vấn. Sau đó bạn có `15 - 30 phút` để tiến hành ghép nối và chỉnh sửa.
+> - Bạn cần tự fake data hoặc tự viết API nếu muốn (không giới hạn ngôn ngữ) khi thực hiện, URL API và dữ liệu thật sẽ được cung cấp tại buổi phỏng vấn. Sau đó bạn có `15 - 30 phút` để tiến hành ghép nối và chỉnh sửa.
 > - Vui lòng không xóa tất cả các đoạn mã code đã có. Trong trường hợp code có sẵn gây lỗi hoặc ảnh hưởng đến code của bạn, vui lòng comment và ghi rõ lý do.
 > - Bạn có thể sử dụng thư viện AntDesign đã được cài sẵn hoặc thêm style custom vào `src/styles/_product.scss`
 > - Chúng tôi đã cài sẵn thư viện icon để bạn có thể sử dụng [Ant Design Icon](https://ant.design/components/icon) và [FontAweSome 7 Free](https://fontawesome.com/icons), hoặc bạn có thể sử dụng SVG nếu muốn.
