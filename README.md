@@ -84,7 +84,7 @@ $ npm run dev
 
 ### Yêu cầu chức năng (Bắt buộc):
 
-#### 1. Trang danh mục sản phẩm:
+#### 1. Trang danh mục sản phẩm: `all-product.jsx`
 
 - Lấy dữ liệu từ API: `GET /category/GetListCategory, params: {lang=en}` → trả về danh sách danh mục sản phẩm:
 
@@ -101,7 +101,7 @@ $ npm run dev
 }
 ```
 
-#### 2. Trang danh sách sản phẩm theo danh mục:
+#### 2. Trang danh sách sản phẩm theo danh mục: `category.jsx`
 
 - Khi click vào một danh mục → điều hướng sang `/category/:url`
 - Lấy dữ liệu từ API: `GET /product/GetProductByCategory, params: {lang=en, page=:pageNum, ids=[/* Danh sách categoryId */]}`, → trả về danh sách sản phẩm theo trang:
@@ -121,7 +121,7 @@ $ npm run dev
 }
 ```
 
-#### 3. Trang chi tiết sản phẩm:
+#### 3. Trang chi tiết sản phẩm: `product-details.jsx`
 
 - Khi click vào một sản phẩm → điều hướng sang `/product/:url`
 - Lấy dữ liệu từ API: `GET product/GetProductByUrl, params: {lang=en, url=:slug}` → trả về chi tiết sản phẩm:
@@ -155,7 +155,7 @@ $ npm run dev
 ```
 
 - Khi thực hiện tìm kiếm → điều hướng sang `/search?query=:keyword`
-- Lấy dữ liệu từ API: `GET /product/SearchProducts, params: {lang=en, query=:keyword}` → trả về danh sách sản phẩm:
+- Lấy dữ liệu từ API: `GET /product/SearchProducts, params: {lang=en, query=:keyword}` → trả về danh sách sản phẩm: `search.jsx`
 
 ```
 {
