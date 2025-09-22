@@ -73,7 +73,7 @@ $ npm run dev
 
 ## ⌨️ Thực hành
 
-### Tên đề: 📦 Product Introduction – Giới thiệu sản phẩm
+### Tên đề: 📦 E-Catalog – Giới thiệu sản phẩm
 
 > "Bạn được phép dùng bất kỳ AI code assistant nào (ChatGPT, Copilot, v.v.). Hãy ghi rõ đoạn code nào được AI gợi ý."
 
