@@ -20,6 +20,7 @@ function Category() {
 
   const [form] = Form.useForm();
 
+  // const [filterList, setFilterList] = useState([]);
   const [filterData, setFilterData] = useState();
   const [isSubmitDisabled, setSubmitDisabled] = useState(true);
 
@@ -27,6 +28,23 @@ function Category() {
     const hasValue = Object.values(allValues).some((value) => value);
     setSubmitDisabled(!hasValue);
   };
+
+  /*  Hàm nối children và filterList được trả về từ API GetCategoryByUrl phục vụ cho chức năng lọc.
+      Hãy bỏ comment nếu bạn sử dụng.
+  */
+  // const mergeFilterLists = (tree) => {
+  //   // Lấy FilterList của node hiện tại
+  //   let mergedList = [...(tree.filterList || [])];
+
+  //   // Duyệt qua từng Children và hợp nhất FilterList
+  //   if (tree.children && tree.children.length > 0) {
+  //     tree.children.forEach((child) => {
+  //       mergedList = mergedList.concat(mergeFilterLists(child));
+  //     });
+  //   }
+
+  //   return mergedList;
+  // };
 
   const onFilter = async (values) => {
     const hasValue = Object.values(values).some((value) => value);

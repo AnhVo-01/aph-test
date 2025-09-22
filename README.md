@@ -104,7 +104,21 @@ $ npm run dev
 #### 2. Trang danh sách sản phẩm theo danh mục: `category.jsx`
 
 - Khi click vào một danh mục → điều hướng sang `/category/:url`
-- Lấy dữ liệu từ API: `GET /product/GetProductByCategory, params: {lang=en, page=:pageNum, ids=[/* Danh sách categoryId */]}`, → trả về danh sách sản phẩm theo trang:
+
+- Lấy dữ liệu của danh mục từ API `GET /product/GetCategoryByUrl, params: {lang=en, url=:url}`
+
+```
+{
+    id: number,
+    thumb: string,
+    categoryName: string,
+    description: string,
+    children: [], // danh sách các danh mục con
+    filterList: [], // danh sách bộ lọc sản phẩm theo danh mục
+}
+```
+
+- Lấy dữ liệu sản phẩm thep danh mục từ API: `GET /product/GetProductByCategory, params: {lang=en, page=:pageNum, ids=[/* Danh sách categoryId */]}`, → trả về danh sách sản phẩm theo trang:
 
 ```
 {
@@ -120,6 +134,8 @@ $ npm run dev
     totalCount: number
 }
 ```
+
+🔸 <u>Ghi chú</u>: Danh sách categoryId bao gồm id của danh mục hiện tại và id của các danh mục con
 
 #### 3. Trang chi tiết sản phẩm: `product-details.jsx`
 
