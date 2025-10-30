@@ -86,7 +86,7 @@ $ npm run dev
 
 #### 1. Trang danh mục sản phẩm: `all-product.jsx`
 
-- Lấy dữ liệu từ API: `GET /category/GetListCategory, params: {lang=en}` → trả về danh sách danh mục sản phẩm:
+- Lấy dữ liệu từ API: `GET /Category/GetListCategory, params: {lang=en}` → trả về danh sách danh mục sản phẩm:
 
 ```
 {
@@ -105,7 +105,7 @@ $ npm run dev
 
 - Khi click vào một danh mục → điều hướng sang `/category/:url`
 
-- Lấy dữ liệu của danh mục từ API `GET /product/GetCategoryByUrl, params: {lang=en, url=:url}`
+- Lấy dữ liệu của danh mục từ API `GET /Category/GetCategoryByUrl, params: {lang=en, url=:url}`
 
 ```
 {
@@ -118,7 +118,7 @@ $ npm run dev
 }
 ```
 
-- Lấy dữ liệu sản phẩm thep danh mục từ API: `GET /product/GetProductByCategory, params: {lang=en, page=:pageNum, ids=[/* Danh sách categoryId */]}`, → trả về danh sách sản phẩm theo trang:
+- Lấy dữ liệu sản phẩm thep danh mục từ API: `GET /Product/GetProductByCategory, params: {lang=en, page=:pageNum, ids=[/* Danh sách categoryId */]}`, → trả về danh sách sản phẩm theo trang:
 
 ```
 {
@@ -140,7 +140,7 @@ $ npm run dev
 #### 3. Trang chi tiết sản phẩm: `product-details.jsx`
 
 - Khi click vào một sản phẩm → điều hướng sang `/product/:url`
-- Lấy dữ liệu từ API: `GET product/GetProductByUrl, params: {lang=en, url=:slug}` → trả về chi tiết sản phẩm:
+- Lấy dữ liệu từ API: `GET /Product/GetProductByUrl, params: {lang=en, url=:slug}` → trả về chi tiết sản phẩm:
 
 ```
 {
@@ -158,7 +158,7 @@ $ npm run dev
 
 ### Các API khác (Tùy chọn):
 
-- Lấy dữ liệu từ API: `GET /product/GetRelatedProducts, params: {lang=en, id=:productId}` → trả về danh sách các sản phẩm liên quan (sử dụng tại trang chi tiết sản phẩm):
+- Lấy dữ liệu từ API: `GET /Product/GetRelatedProducts, params: {lang=en, id=:productId}` → trả về danh sách các sản phẩm liên quan (sử dụng tại trang chi tiết sản phẩm):
 
 ```
 {
@@ -171,7 +171,7 @@ $ npm run dev
 ```
 
 - Khi thực hiện tìm kiếm → điều hướng sang `/search?query=:keyword`
-- Lấy dữ liệu từ API: `GET /product/SearchProducts, params: {lang=en, query=:keyword}` → trả về danh sách sản phẩm: `search.jsx`
+- Lấy dữ liệu từ API: `GET /Product/SearchProducts, params: {lang=en, query=:keyword}` → trả về danh sách sản phẩm: `search.jsx`
 
 ```
 {
@@ -181,11 +181,11 @@ $ npm run dev
 }
 ```
 
-- Lấy dữ liệu từ API: `POST /product/FilterSearchProduct, body: {lang=en, textSearch=:keyword, categories=[/*Danh sách categoryId*/], page=:pageNum}` → trả về danh sách sản phẩm đã lọc.
+- Lấy dữ liệu từ API: `POST /Product/FilterSearchProduct, body: {lang=en, textSearch=:keyword, categories=[/*Danh sách categoryId*/], page=:pageNum}` → trả về danh sách sản phẩm đã lọc.
 
 > 🔸 **Lưu ý**:
 >
-> - Bạn cần tự fake data hoặc tự viết API nếu muốn (không giới hạn ngôn ngữ) khi thực hiện, URL API và dữ liệu thật sẽ được cung cấp tại buổi phỏng vấn. Sau đó bạn có `15 - 30 phút` để tiến hành ghép nối và chỉnh sửa.
+> - Bạn cần tự fake data hoặc tự viết API nếu muốn (không giới hạn ngôn ngữ) khi thực hiện, URL API và dữ liệu thật sẽ được cung cấp tại buổi phỏng vấn. Sau đó bạn có `15 - 30 phút` để tiến hành ghép nối và chỉnh sửa. Trường hợp tự viết API, vui lòng đẩy lên cùng với repo này.
 > - Vui lòng không xóa tất cả các đoạn mã code đã có. Trong trường hợp code có sẵn gây lỗi hoặc ảnh hưởng đến code của bạn, vui lòng comment và ghi rõ lý do.
 > - Bạn có thể sử dụng thư viện AntDesign đã được cài sẵn hoặc thêm style custom vào `src/styles/_product.scss`
 > - Chúng tôi đã cài sẵn thư viện icon để bạn có thể sử dụng [Ant Design Icon](https://ant.design/components/icon) và [FontAweSome 7 Free](https://fontawesome.com/icons), hoặc bạn có thể sử dụng SVG nếu muốn.
