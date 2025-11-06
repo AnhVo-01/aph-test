@@ -175,8 +175,21 @@ $ npm run dev
 
 ```
 {
-    products: [],
-    categories: [], // Dùng cho filters
+    products: [
+        {
+            id: number,
+            thumb: string,
+            prodName: string,
+            slug: string,
+            sku: string
+        }
+    ],
+    categories: [
+        {
+            id: number,
+            categoryName: string
+        }
+    ], // Dùng cho filters
     filters: [],    // Dùng cho filters
 }
 ```
