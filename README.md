@@ -198,7 +198,7 @@ $ npm run dev
 
 > 🔸 **Lưu ý**:
 >
-> - Bạn cần tự fake data hoặc tự viết API nếu muốn (không giới hạn ngôn ngữ) khi thực hiện, URL API và dữ liệu thật sẽ được cung cấp tại buổi phỏng vấn. Sau đó bạn có `15 - 30 phút` để tiến hành ghép nối và chỉnh sửa. Trường hợp tự viết API, vui lòng đẩy lên cùng với repo này.
+> - Bạn cần tự fake data hoặc tự viết API (khuyến khích ứng viên tự làm, không giới hạn ngôn ngữ) khi thực hiện, URL API và dữ liệu thật sẽ được cung cấp tại buổi phỏng vấn. Sau đó bạn có `15 - 30 phút` để tiến hành ghép nối và chỉnh sửa. Trường hợp tự viết API, vui lòng đẩy lên cùng với repo này.
 > - Vui lòng không xóa tất cả các đoạn mã code đã có. Trong trường hợp code có sẵn gây lỗi hoặc ảnh hưởng đến code của bạn, vui lòng comment và ghi rõ lý do.
 > - Bạn có thể sử dụng thư viện AntDesign đã được cài sẵn hoặc thêm style custom vào `src/styles/_product.scss`
 > - Chúng tôi đã cài sẵn thư viện icon để bạn có thể sử dụng [Ant Design Icon](https://ant.design/components/icon) và [FontAweSome 7 Free](https://fontawesome.com/icons), hoặc bạn có thể sử dụng SVG nếu muốn.
